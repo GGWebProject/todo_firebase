@@ -1,0 +1,279 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "prettier",
+    "prettier/@typescript-eslint",
+    "airbnb-typescript",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["prettier", "react", "@typescript-eslint"],
+  "rules": {
+    "react/jsx-one-expression-per-line": "off",
+    "quotes": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "object-curly-spacing": ["error", "always"],
+    "no-else-return": "warn",
+    "prefer-const": "warn",
+    "no-use-before-define": "off",
+    "object-curly-newline": ["error", { "multiline": true }],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["return", "switch", "if", "for", "while"]
+      },
+      {
+        "blankLine": "always",
+        "prev": ["if", "switch", "for", "while"],
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": ["const", "let", "var"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/quotes": ["error"]
+  },
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/quotes": ["error", "single"],
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "ignoreTypeReferences": false
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "vars": "all",
+            "args": "none"
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": [
+          "error",
+          {
+            "ignoreRestArgs": true
+          }
+        ]
+      }
+    }
+  ]
+}
+
+//   "rules": {
+//   "lines-between-class-members": ["warn", "always"],
+//     "jsx-quotes": ["warn", "prefer-single"],
+//     "object-curly-spacing": ["warn", "always"],
+//     "no-unused-vars": [
+//     "warn",
+//     {
+//       "vars": "all",
+//       "args": "none"
+//     }
+//   ],
+//     "max-len": [
+//     "warn",
+//     {
+//       "code": 120,
+//       "ignoreStrings": true,
+//       "ignoreTemplateLiterals": true,
+//       "ignoreComments": true
+//     }
+//   ],
+//     "no-plusplus": [
+//     "error",
+//     {
+//       "allowForLoopAfterthoughts": true
+//     }
+//   ],
+//     "react/jsx-key": "error",
+//     "import/no-extraneous-dependencies": [
+//     "error",
+//     {
+//       "devDependencies": [
+//         "**/*.test.js",
+//         "**/*.test.jsx",
+//         "**/*.test.ts",
+//         "**/*.test.tsx",
+//         "src/tests/**/*"
+//       ]
+//     }
+//   ],
+//     "react/jsx-props-no-spreading": "off",
+//     "import/prefer-default-export": "off",
+//     "react/jsx-boolean-value": "off",
+//     "react/prop-types": "off",
+//     "react/no-unescaped-entities": "off",
+//     "react/jsx-one-expression-per-line": "off",
+//     "react/jsx-wrap-multilines": "off",
+//     "react/destructuring-assignment": "off",
+//     "indent": [
+//     2,
+//     2,
+//     {
+//       "SwitchCase": 1,
+//       "ignoredNodes": ["TaggedTemplateExpression > *"]
+//     }
+//   ],
+//     "space-before-function-paren": [
+//     "warn",
+//     {
+//       "anonymous": "never",
+//       "named": "never",
+//       "asyncArrow": "always"
+//     }
+//   ],
+//     "no-multiple-empty-lines": [
+//     "warn",
+//     {
+//       "max":  1
+//     }
+//   ],
+//     "padding-line-between-statements": [
+//     "warn",
+//     {
+//       "blankLine": "never",
+//       "prev": "*",
+//       "next": ["return", "switch", "if", "for", "while"]
+//     },
+//     {
+//       "blankLine": "always",
+//       "prev": ["if", "switch", "for", "while"],
+//       "next": "*"
+//     },
+//     {
+//       "blankLine": "always",
+//       "prev": ["const", "let", "var"],
+//       "next": "*"
+//     },
+//     {
+//       "blankLine": "any",
+//       "prev": ["const", "let", "var"],
+//       "next": ["const", "let", "var"]
+//     }
+//   ],
+//     "keyword-spacing": [
+//     "warn",
+//     {
+//       "before": true,
+//       "after": true
+//     }
+//   ],
+//     "linebreak-style": ["warn", "unix"],
+//     "quotes": ["warn", "single"],
+//     "semi": ["warn", "always"],
+//     "curly": "error",
+//     "brace-style": "warn",
+//     "comma-dangle": ["warn", "always-multiline"],
+//     "comma-spacing": [
+//     "warn",
+//     {
+//       "before": false,
+//       "after": true
+//     }
+//   ],
+//     "space-before-blocks": "warn",
+//     "space-infix-ops": [
+//     "warn",
+//     {
+//       "int32Hint": false
+//     }
+//   ],
+//     "no-class-assign": "off",
+//     "no-console": "warn",
+//     "no-extra-bind": "warn",
+//     "prefer-arrow-callback": "error",
+//     "no-debugger": "warn",
+//     "key-spacing": "warn",
+//     "prefer-destructuring": [
+//     "warn",
+//     {
+//       "array": true,
+//       "object": true
+//     },
+//     {
+//       "enforceForRenamedProperties": false
+//     }
+//   ],
+//     "arrow-parens": ["warn", "always"],
+//     "no-useless-constructor": "warn",
+//     "no-use-before-define": "off",
+//     "no-duplicate-imports": "error",
+//     "no-else-return": "warn",
+//     "no-multi-spaces": "warn",
+//     "operator-linebreak": ["warn", "before"],
+//     "prefer-const": "warn",
+//     "react/jsx-uses-vars": "warn",
+//     "react/react-in-jsx-scope": "warn",
+//     "react/jsx-uses-react": "warn",
+//     "react/jsx-no-duplicate-props": "warn",
+//     "react/require-render-return": "warn",
+//     "react/no-did-mount-set-state": "warn",
+//     "react/no-did-update-set-state": "warn",
+//     "react/no-direct-mutation-state": "warn",
+//     "@typescript-eslint/explicit-function-return-type": "off",
+//     "@typescript-eslint/no-use-before-define": "off",
+//     "@typescript-eslint/no-unused-vars": "off",
+//     "@typescript-eslint/no-explicit-any": "off",
+//     "jest/no-focused-tests": "warn",
+//     "jest/no-jasmine-globals": "warn",
+//     "jest/no-test-prefixes": "warn"
+// },
+//   "overrides": [
+//   {
+//     // enable the rule specifically for TypeScript files
+//     "files": ["*.ts", "*.tsx"],
+//     "rules": {
+//       "@typescript-eslint/explicit-function-return-type": ["error"],
+//       "@typescript-eslint/no-use-before-define": [
+//         "error",
+//         {
+//           "functions": false,
+//           "classes": false
+//         }
+//       ],
+//       "@typescript-eslint/no-unused-vars": [
+//         "warn",
+//         {
+//           "vars": "all",
+//           "args": "none"
+//         }
+//       ],
+//       "@typescript-eslint/no-explicit-any": [
+//         "error",
+//         {
+//           "ignoreRestArgs": true
+//         }
+//       ]
+//     }
+//   }
+// ]

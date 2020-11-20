@@ -1,0 +1,5 @@
+{
+  "**/*.{json,md}": ["prettier --write"],
+  "**/*.{ts,tsx}": ["prettier-eslint --write --eslint-config-path=.eslintrc.json --log-level=info", "eslint **/*.{ts,tsx} --max-warnings 0"],
+  "**/*.scss": ["stylelint --max-warnings 0"]
+}
